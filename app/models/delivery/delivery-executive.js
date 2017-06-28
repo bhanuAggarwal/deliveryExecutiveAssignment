@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import BaseModel from '../base-model';
+import { options as STATUS, default as STATUS_TYPES } from './delivery-executive-status';
 
 class DeliveryExecutive extends BaseModel {
 	constructor(){
@@ -23,6 +24,11 @@ class DeliveryExecutive extends BaseModel {
 			},
 			area : {
 				type : String,
+				required : true
+			},
+			status : {
+				type : String,
+				enum : STATUS,
 				required : true
 			}
 		});

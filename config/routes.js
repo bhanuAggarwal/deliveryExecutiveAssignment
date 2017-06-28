@@ -6,7 +6,7 @@
 
 const home = require('../app/controllers/home');
 const orderController = require('../app/controllers/order');
-
+const deliveryExecutive  = require('../app/controllers/delivery-executive');
 /**
  * Expose
  */
@@ -18,6 +18,8 @@ module.exports = function (app) {
   app.get('/order/deliveryExecutive/!assign',orderController.assignDeliveryExecutive);
 
   app.post('/order', orderController.create);
+
+  app.post('/delivery/deliveryExecutive', deliveryExecutive.create);
 
   /**
    * Error handling
